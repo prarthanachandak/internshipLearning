@@ -1,9 +1,16 @@
-const express = require('express')  //function
-const students = require('./students')
+const express = require('express');  //function
+const mongoose = require('mongoose');
+const students = require('./students');
 
-const app = express()   //application object
+const app = express();   //application object
 
 app.use(express.json()) //turns the body into object and set t request.body properties
+
+mongoose.connect("mongodb://localhost:27017/studentLogin", {newUrlParser: true, useUnifiedTopology: true})
+.then(() => console.log("connection successful!"))
+.catch((err)=>console.log(err));
+
+//user schema - new field roll number = 0 for students, 1 for teachers
 
 
 app.listen(3000, ()=>{
@@ -31,11 +38,14 @@ app.post('/api/students', (req, res)=>{
         id: students.length+1,
         first_name: req.body.first_name,
         last_name: req.body.last_name,
-        email: req.body.email
+        email: req.body.email,
+        pass: req.body.pass
     }
     students.push(user)
     res.json(user)
 })
+
+
 
 app.put('/api/students/:id', (req, res)=>{  //update with respect to id
       
@@ -43,6 +53,7 @@ app.put('/api/students/:id', (req, res)=>{  //update with respect to id
     let first_name = req.body.first_name
     let last_name = req.body.last_name
     let email = req.body.email
+    let pass = req.body.pass
 
     let index = students.findIndex((student)=>{
         return(student.id==Number.parseInt(id))
@@ -53,6 +64,7 @@ app.put('/api/students/:id', (req, res)=>{  //update with respect to id
         std.first_name = first_name
         std.last_name = last_name
         std.email = email
+        std.pass = pass
         res.json(std)
     }
     else{
@@ -80,4 +92,8 @@ app.delete('/api/students/:id', (req,res)=>{
         res.status(404)
     }
     
+})
+
+app.post('/api/studentLogin', (req, res)=>{
+    res.json(students)
 })

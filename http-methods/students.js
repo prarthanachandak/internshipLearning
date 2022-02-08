@@ -2,52 +2,62 @@ const students = [{
     "id": 1,
     "first_name": "Janek",
     "last_name": "Caldairou",
-    "email": "jcaldairou0@cornell.edu"
+    "email": "jcaldairou0@cornell.edu",
+    "pass": "1"
   }, {
     "id": 2,
     "first_name": "Jewell",
     "last_name": "Alam",
-    "email": "jalam1@nsw.gov.au"
+    "email": "jalam1@nsw.gov.au",
+    "pass": "2"
   }, {
     "id": 3,
     "first_name": "Brewster",
     "last_name": "Ostridge",
-    "email": "bostridge2@symantec.com"
+    "email": "bostridge2@symantec.com",
+    "pass": "3"
   }, {
     "id": 4,
     "first_name": "Benjamen",
     "last_name": "Agett",
-    "email": "bagett3@gnu.org"
+    "email": "bagett3@gnu.org",
+    "pass": "4"
   }, {
     "id": 5,
     "first_name": "Valerie",
     "last_name": "Kildea",
-    "email": "vkildea4@vistaprint.com"
+    "email": "vkildea4@vistaprint.com",
+    "pass": "5"
   }, {
     "id": 6,
     "first_name": "Konstanze",
     "last_name": "Roebuck",
-    "email": "kroebuck5@flavors.me"
+    "email": "kroebuck5@flavors.me",
+    "pass": "6"
   }, {
     "id": 7,
     "first_name": "Kiley",
     "last_name": "Janse",
-    "email": "kjanse6@ehow.com"
+    "email": "kjanse6@ehow.com",
+    "pass": "7"
   }, {
     "id": 8,
     "first_name": "Kasey",
     "last_name": "McGuinley",
-    "email": "kmcguinley7@qq.com"
+    "email": "kmcguinley7@qq.com",
+    "pass": "8"
   }, {
     "id": 9,
     "first_name": "Bernete",
     "last_name": "Caseri",
-    "email": "bcaseri8@theglobeandmail.com"
+    "email": "bcaseri8@theglobeandmail.com",
+    "pass": "9"
   }, {
     "id": 10,
     "first_name": "Christy",
     "last_name": "Godspeede",
-    "email": "cgodspeede9@sfgate.com"
+    "email": "cgodspeede9@sfgate.com",
+    "pass": "10"
 }]
 
 module.exports = students
